@@ -4,6 +4,7 @@ const num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 const baraja = [];
 const numerosParaEliminar = 6;
 const barajaParaEliminar = new Array(52).fill(false);
+let numCartasEliminadas = 0;
 
 for(i=0;i<tipo.length;i++)
 {
@@ -20,6 +21,7 @@ for(i=0;i<tipo.length;i++)
         baraja.push(carta); 
     }
 }
+const numCartasTotal = baraja.length;
 
 function hacerRandom()
 {
@@ -55,6 +57,18 @@ function elminarCartas(numerosParaEliminar)
 let numeroEliminadoEnArray = elminarCartas(numerosParaEliminar); 
 for(i=0;i<numerosParaEliminar;i++)
 {
-    baraja(numeroEliminadoEnArray[i]);
+    baraja.splice(numeroEliminadoEnArray[i], 1, false);
 }
-
+while(numCartasEliminadas<numerosParaEliminar)
+{
+    for(i=0; i<numCartasTotal;i++)
+    {
+        if(baraja[i] === false)
+        {
+            baraja.splice(i, 1)
+            numCartasEliminadas++;
+        }
+    }
+}
+console.log(numeroEliminadoEnArray);
+console.log(baraja);
