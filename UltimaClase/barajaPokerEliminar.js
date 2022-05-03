@@ -72,3 +72,13 @@ while(numCartasEliminadas<numerosParaEliminar)
 }
 console.log(numeroEliminadoEnArray);
 console.log(baraja);
+////////////////////////////////////////////////////////////////
+var someString = "hi";
+typeof someString[Symbol.iterator];          // "function"
+console.log(someString[Symbol.iterator]);
+
+/*
+var someArray = [1, 5, 7];
+var someArrayEntries = someArray.entries();
+console.log(someArrayEntries);
+*/
