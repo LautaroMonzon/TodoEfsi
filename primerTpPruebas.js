@@ -3,53 +3,15 @@ function randomizar(min, max)
     return Math.floor((Math.random() * (max - min + 1)) + min);
 }
 
-function elegirNumeros(valor)
+
+export function elegirNumeros(valor)
 {
-    switch (valor) 
-    {
-        case 0:
-          //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor1
-          valor = randomizar(0,9)
-        break;
-        case 1:
-          //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor2
-          valor = randomizar(10,19)
-        break;
-        case 2:
-          //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor2
-          valor = randomizar(20,29)
-        break;
-        case 3:
-          //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor2
-          valor = randomizar(30,39)
-        break;
-        case 4:
-          //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor2
-          valor = randomizar(40,49)
-        break;
-        case 5:
-          //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor2
-          valor = randomizar(50,59)
-        break;
-        case 6:
-          //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor2
-          valor = randomizar(60,69)
-        break;
-        case 7:
-          //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor2
-          valor = randomizar(70,79)
-        break;
-        case 8:
-          //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor2
-          valor = randomizar(80,89)
-        break;
-        case 9:
-          //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor2
-          valor = randomizar(90,100)
-        break;
-    }
-    return valor;
+  if (valor === 0) return randomizar(0, 10)
+  if (valor === 9) return randomizar(90, 100)
+  return randomizar(valor * 10, valor * 10 + 9)
 }
+  
+
 
 
 let cantidadCartones = 3;
@@ -74,7 +36,7 @@ for(let i=0; i<cantidadCartones;i++)//crear 3 cartones
         {
             while(noSeRepite === true)
             {
-                numeroSacado = (elegirNumeros(j));
+              numeroSacado = (elegirNumeros(j));
             }
         }
         if(posicion === 9)
