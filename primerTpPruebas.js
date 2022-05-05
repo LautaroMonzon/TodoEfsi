@@ -6,7 +6,7 @@ function randomizar(min, max)
 
 export function elegirNumeros(valor)
 {
-  if (valor === 0) return randomizar(0, 10)
+  if (valor === 0) return randomizar(0, 9)
   if (valor === 9) return randomizar(90, 100)
   return randomizar(valor * 10, valor * 10 + 9)
 }
